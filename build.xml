@@ -5,6 +5,9 @@
     <property name="productionDir" value="yourproject.com" />
     <property name="staggingDir" value="tst.yourproject.com" />
 
+    <property name="host" value="yourprojecthost" />
+    <property name="hostpass" value="yourprojecthostpassword" />
+
     <property name="currentBranch" value="" />
     <property name="deployBranch" value="" />
 
@@ -48,7 +51,7 @@
 
         <echo msg="Connecting to yourprojecthost ${deployDir}" />
         <echo msg="Deploy branch: ${deployBranch}" />
-		<ssh username="mfcc" password="password" host="yourprojecthost" command="cd /domains/${deployDir}/public &amp;&amp; git fetch &amp;&amp; git checkout ${deployBranch} &amp;&amp; git pull origin ${deployBranch}" />
+		<ssh username="mfcc" password="${hostpass}" host="${host}" command="cd /domains/${deployDir}/public &amp;&amp; git fetch &amp;&amp; git checkout ${deployBranch} &amp;&amp; git pull origin ${deployBranch}" />
     </target>
 
     <!-- ============================================  -->
@@ -67,10 +70,10 @@
         <echo msg="Connecting to yourprojecthost" />
 
         <echo msg="Deploy branch master to ${productionDir}" />
-        <ssh username="mfcc" password="password" host="yourprojecthost" command="cd /domains/${productionDir}/public &amp;&amp; git fetch &amp;&amp; git checkout master &amp;&amp; git pull origin master" />
+        <ssh username="mfcc" password="${hostpass}" host="${host}" command="cd /domains/${productionDir}/public &amp;&amp; git fetch &amp;&amp; git checkout master &amp;&amp; git pull origin master" />
 
         <echo msg="Deploy branch develop to ${staggingDir}" />
-        <ssh username="mfcc" password="password" host="yourprojecthost" command="cd /domains/${staggingDir}/public &amp;&amp; git fetch &amp;&amp; git checkout develop &amp;&amp; git pull origin develop" />
+        <ssh username="mfcc" password="${hostpass}" host="${host}" command="cd /domains/${staggingDir}/public &amp;&amp; git fetch &amp;&amp; git checkout develop &amp;&amp; git pull origin develop" />
 
     </target>
 
