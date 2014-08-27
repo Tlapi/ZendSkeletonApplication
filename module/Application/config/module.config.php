@@ -100,7 +100,7 @@ return array(
         ),
     ),
     // Doctrine driver config
-    /*
+    
     'doctrine' => array(
     		'driver' => array(
     				'app_driver' => array(
@@ -114,5 +114,5 @@ return array(
     						),
     				),
     		),
-    ),*/
+    ),
 );
