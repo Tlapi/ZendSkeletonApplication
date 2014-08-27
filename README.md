@@ -126,7 +126,7 @@ Gulp comes with following packages:
 
 Gulp watch watches `publicdir/js`, `publicdir/js/libs` and `publicdir/js/scss` for any changes.
 
-How to use faker
+How to use [faker](https://github.com/fzaninotto/Faker)
 ----------------------------------
 ```
 $generator = \Faker\Factory::create();
@@ -137,3 +137,5 @@ $populator->addEntity('ZfcUser\Entity\User', 100, array(
 ));
 $insertedPKs = $populator->execute();
 ```
+
+Find more details [here](https://github.com/fzaninotto/Faker)
