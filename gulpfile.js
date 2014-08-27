@@ -7,6 +7,13 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var mainBowerFiles = require('main-bower-files');
+
+// Get all bower libraries
+gulp.task("main-bower-files", function(){
+    return gulp.src(mainBowerFiles(/* options */), { base: 'bower_components' })
+        .pipe(gulp.dest('www_root/js'))
+});
 
 // Lint Task
 // checks any JavaScript file in our js/ directory and makes sure there are no errors in our code.
@@ -21,7 +28,7 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     return gulp.src('www_root/scss/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('www_root/css'));
 });
 
 // Concatenate & Minify JS
@@ -30,10 +37,10 @@ gulp.task('sass', function() {
 gulp.task('scripts', function() {
     return gulp.src('www_root/js/*.js')
         .pipe(concat('all.js'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('www_root/dist'))
         .pipe(rename('all.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('www_root/dist'));
 });
 
 // Watch Files For Changes
@@ -44,4 +51,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('default', ['main-bower-files', 'lint', 'sass', 'scripts', 'watch']);
