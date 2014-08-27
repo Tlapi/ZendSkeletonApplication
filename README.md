@@ -84,21 +84,28 @@ Install bower (if not installed)
 npm install -g bower
 ```
 
+Require your project dependencies, e.g.:
+```
+bower install jquery
+```
+
+And update your package file to share with others
+```
+bower init
+```
+
 ### [optional] Set up Gulp
 
-### Create databse
+Install gulp globally (if needed)
+```
+npm install --global gulp
+```
+Edit `gulpfile.js` to meet your needs and run
+```
+gulp
+```
 
-To setup apache, setup a virtual host to point to the public/ directory of the
-project and you should be ready to go! It should look something like below:
+To run individual tasks, use `gulp <task> <othertask>`.
 
-    <VirtualHost *:80>
-        ServerName zf2-tutorial.localhost
-        DocumentRoot /path/to/zf2-tutorial/public
-        SetEnv APPLICATION_ENV "development"
-        <Directory /path/to/zf2-tutorial/public>
-            DirectoryIndex index.php
-            AllowOverride All
-            Order allow,deny
-            Allow from all
-        </Directory>
-    </VirtualHost>
+What is the default set up of Gulp
+----------------------------------
