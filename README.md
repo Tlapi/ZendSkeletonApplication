@@ -107,5 +107,22 @@ gulp
 
 To run individual tasks, use `gulp <task> <othertask>`.
 
-What is the default set up of Gulp
+Default Gulp setup
 ----------------------------------
+
+Gulp comes with following packages:
+* [gulp-jshint](https://www.npmjs.org/package/gulp-jshint)
+* [gulp-sass](https://www.npmjs.org/package/gulp-sass)
+* [gulp-concat](https://www.npmjs.org/package/gulp-concat)
+* [gulp-uglify](https://www.npmjs.org/package/gulp-uglify)
+* [gulp-rename](https://www.npmjs.org/package/gulp-rename)
+* [main-bower-files](https://www.npmjs.org/package/main-bower-files)
+
+`gulp` command does following:
+* Gets all libraries installed and required by bower in `bower.js`, copies them to `publicdir/js/libs` and concatenates them to `publicdir/dist/libs.js`, `publicdir/dist/libs.min.js`
+* checks any JavaScript file in our `publicdir/js` directory and makes sure there are no errors in our code (excluding subfolders)
+* compiles any of our Sass files in our `publicdir/scss` directory into .css and saves the compiled .css file in our `publicdir/css` directory
+* concatenates all JavaScript files in our `publicdir/js` directory (excluding subfolders) and saves the ouput to `publicdir/dist/scripts.js`, `publicdir/dist/scripts.min.js`
+
+Gulp watch watches `publicdir/js`, `publicdir/js/libs` and `publicdir/js/scss` for any changes.
+
