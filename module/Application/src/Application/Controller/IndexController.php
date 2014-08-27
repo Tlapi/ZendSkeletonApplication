@@ -9,13 +9,40 @@
 
 namespace Application\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
+use Application\Controller\EntityUsingController;
+use DoctrineORMModule\Stdlib\Hydrator\DoctrineEntity;
 use Zend\View\Model\ViewModel;
 
-class IndexController extends AbstractActionController
+class IndexController extends EntityUsingController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        $article = new \Application\Entity\Article();
+
+        $form = new \Application\Form\Article($this->getEntityManager());
+        $form->setHydrator(new DoctrineEntity($this->getEntityManager(),'\Application\Entity\Article'));
+        $form->bind($article);
+
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            // add input filter
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+                $article->exchangeArray($this->getRequest()->getPost()->toArray());
+                $em = $this->getEntityManager();
+
+                $em->persist($article);
+                $em->flush();
+
+                $this->flashMessenger()->addSuccessMessage('Article Saved');
+
+                return $this->redirect()->toRoute('home');
+            }
+        }
+
+        return new ViewModel(array(
+            'form' => $form
+        ));
     }
 }
