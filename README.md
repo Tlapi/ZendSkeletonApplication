@@ -18,8 +18,8 @@ This skeleton comes with:
 
 Project is [optionally] integrated with:
 * [Fabric](http://www.fabfile.org/)
-* [Bower](http://bower.io/)
-* [Gulp](http://gulpjs.com/)
+* [Bower](http://bower.io/) ([nmp](https://www.npmjs.org/) required)
+* [Gulp](http://gulpjs.com/) ([nmp](https://www.npmjs.org/) required)
 
 
 Installation
