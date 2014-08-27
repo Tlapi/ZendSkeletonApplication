@@ -18,8 +18,8 @@ This skeleton comes with:
 
 Project is [optionally] integrated with:
 * [Fabric](http://www.fabfile.org/)
-* [Bower](http://bower.io/)
-* [Gulp](http://gulpjs.com/)
+* [Bower](http://bower.io/) ([nmp](https://www.npmjs.org/) required)
+* [Gulp](http://gulpjs.com/) ([nmp](https://www.npmjs.org/) required)
 
 
 Installation
@@ -60,13 +60,29 @@ Create your Entities and Repositories. Example provided is in `module/Applicatio
 
 ### Create database
 
-Run `php vendor/bin/doctrine orm:schema-tool:update --force` to create your database.
+Run 
+```
+php vendor/bin/doctrine orm:schema-tool:update --force
+``` 
+to create your database.
 
 ### [optional] Set up Fabric
 
-Set your deployment options in `build.xml` and deploy with cli: `fab` or apply your hotfix with: `fab applyhotfix`
+Set your deployment options in `build.xml` and deploy with cli: 
+```
+fab
+``` 
+or apply your hotfix with: 
+```
+fab applyhotfix
+```
 
 ### [optional] Set up Bower
+
+Install bower (if not installed)
+```
+npm install -g bower
+```
 
 ### [optional] Set up Gulp
 
