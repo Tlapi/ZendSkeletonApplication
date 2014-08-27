@@ -106,3 +106,6 @@ gulp
 ```
 
 To run individual tasks, use `gulp <task> <othertask>`.
+
+What is the default set up of Gulp
+----------------------------------
