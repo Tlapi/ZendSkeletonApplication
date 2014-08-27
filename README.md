@@ -16,7 +16,7 @@ This skeleton comes with:
 * [Faker](https://github.com/fzaninotto/Faker)
 * [Carbon](https://github.com/briannesbitt/Carbon)
 
-Project is integrated with:
+Project is [optionally] integrated with:
 * [Fabric](http://www.fabfile.org/)
 * [Bower](http://bower.io/)
 * [Gulp](http://gulpjs.com/)
