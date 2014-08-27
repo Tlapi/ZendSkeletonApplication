@@ -1,11 +1,26 @@
-ZendSkeletonApplication
+MFCC - ZendSkeletonApplication
 =======================
 
 Introduction
 ------------
 This is a simple, skeleton application using the ZF2 MVC layer and module
-systems. This application is meant to be used as a starting place for those
-looking to get their feet wet with ZF2.
+systems.
+
+This skeleton comes with:
+
+* [Zend Developer Tools](https://github.com/zendframework/ZendDeveloperTools)
+* [Zfc Twitter Bootstrap](https://github.com/mwillbanks/ZfcTwitterBootstrap)
+* [Doctrine](http://www.doctrine-project.org/)
+* [ZfcUser - Doctrine](https://github.com/ZF-Commons/ZfcUser)
+* [Social Auth - Doctrine](https://github.com/SocalNick/ScnSocialAuth)
+* [Faker](https://github.com/fzaninotto/Faker)
+* [Carbon](https://github.com/briannesbitt/Carbon)
+
+Project is integrated with:
+* [Fabric](http://www.fabfile.org/)
+* [Bower](http://bower.io/)
+* [Gulp](http://gulpjs.com/)
+
 
 Installation
 ------------
@@ -16,13 +31,13 @@ The recommended way to get a working copy of this project is to clone the reposi
 and use `composer` to install dependencies using the `create-project` command:
 
     curl -s https://getcomposer.org/installer | php --
-    php composer.phar create-project -sdev --repository-url="https://packages.zendframework.com" zendframework/skeleton-application path/to/install
+    php composer.phar create-project mfcc/skeleton-application path/to/install
 
 Alternately, clone the repository and manually invoke `composer` using the shipped
 `composer.phar`:
 
     cd my/project/dir
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git
+    git clone https://github.com/Tlapi/ZendSkeletonApplication.git
     cd ZendSkeletonApplication
     php composer.phar self-update
     php -c php.ini composer.phar install
@@ -30,36 +45,30 @@ Alternately, clone the repository and manually invoke `composer` using the shipp
 (The `self-update` directive is to ensure you have an up-to-date `composer.phar`
 available.)
 
-Another alternative for downloading the project is to grab it via `curl`, and
-then pass it to `tar`:
-
-    cd my/project/dir
-    curl -#L https://github.com/zendframework/ZendSkeletonApplication/tarball/master | tar xz --strip-components=1
-
-You would then invoke `composer` to install dependencies per the previous
-example.
-
-Using Git submodules
---------------------
-Alternatively, you can install using native git submodules:
-
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git --recursive
-
-Web Server Setup
+Project Setup
 ----------------
 
-### PHP CLI Server
+### Setup project configs
 
-The simplest way to get started if you are using PHP 5.4 or above is to start the internal PHP cli-server in the root directory:
+Set your db connection. Copy `config/autoload/local.php.dist` to `config/autoload/local.php` and provide username, password etc.
 
-    php -S 0.0.0.0:8080 -t public/ public/index.php
+Set your social login integration if needed in `config/autoload/scn-social-auth.global.php` and `config/autoload/scn-social-auth.local.php.dist`
 
-This will start the cli-server on port 8080, and bind it to all network
-interfaces.
+### Create entities
 
-**Note: ** The built-in CLI server is *for development only*.
+Create your Entities and Repositories. Example provided is in `module/Application/src/Application/Entity/Article.php`
 
-### Apache Setup
+### Create database
+
+Run `php vendor/bin/doctrine orm:schema-tool:update --force` to create your database.
+
+### [optional] Set up Fabric
+
+### [optional] Set up Bower
+
+### [optional] Set up Gulp
+
+### Create databse
 
 To setup apache, setup a virtual host to point to the public/ directory of the
 project and you should be ready to go! It should look something like below:
