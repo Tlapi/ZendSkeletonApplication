@@ -126,3 +126,14 @@ Gulp comes with following packages:
 
 Gulp watch watches `publicdir/js`, `publicdir/js/libs` and `publicdir/js/scss` for any changes.
 
+How to use faker
+----------------------------------
+```
+$generator = \Faker\Factory::create();
+$populator = new \Faker\ORM\Doctrine\Populator($generator, $this->getEntityManager());
+$populator->addEntity('SomeEntity', 1000);
+$populator->addEntity('ZfcUser\Entity\User', 100, array(
+  'username' => null
+));
+$insertedPKs = $populator->execute();
+```
