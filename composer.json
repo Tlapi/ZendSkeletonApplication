@@ -13,6 +13,7 @@
         "zendframework/zend-developer-tools": "dev-master",
         "socalnick/scn-social-auth-doctrine-orm": "dev-master",
         "mwillbanks/zfc-twitter-bootstrap": "dev-master",
-        "fzaninotto/faker": "dev-master"
+        "fzaninotto/faker": "dev-master",
+        "nesbot/Carbon": "*"
     }
 }
