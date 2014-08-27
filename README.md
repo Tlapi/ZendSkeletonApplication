@@ -100,7 +100,7 @@ Install gulp globally (if needed)
 ```
 npm install --global gulp
 ```
-Edit `gulpfile.js` to meet your needs and run
+Edit `gulpfile.js` to meet your needs (set `publicDir` variable) and run
 ```
 gulp
 ```
