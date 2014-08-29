@@ -132,6 +132,8 @@ How to use [faker](https://github.com/fzaninotto/Faker)
 
 Edit `FakerController.php` and then just run `php public/index.php faker`
 
+Example content of `FakerController.php`:
+
 ```
 $generator = \Faker\Factory::create();
 $populator = new \Faker\ORM\Doctrine\Populator($generator, $this->getEntityManager());
