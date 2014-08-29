@@ -14,6 +14,7 @@
         "socalnick/scn-social-auth-doctrine-orm": "dev-master",
         "mwillbanks/zfc-twitter-bootstrap": "dev-master",
         "fzaninotto/faker": "dev-master",
-        "nesbot/Carbon": "*"
+        "nesbot/Carbon": "*",
+        "league/flysystem": "0.5.*"
     }
 }
