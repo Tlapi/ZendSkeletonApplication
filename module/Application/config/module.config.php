@@ -96,6 +96,15 @@ return array(
     'console' => array(
         'router' => array(
             'routes' => array(
+                'faker' => array(
+                    'options' => array(
+                        'route'    => '/faker',
+                        'defaults' => array(
+                            'controller' => 'Application\Controller\Faker',
+                            'action'     => 'index',
+                        ),
+                    ),
+                ),
             ),
         ),
     ),
