@@ -15,6 +15,7 @@ This skeleton comes with:
 * [Social Auth - Doctrine](https://github.com/SocalNick/ScnSocialAuth)
 * [Faker](https://github.com/fzaninotto/Faker)
 * [Carbon](https://github.com/briannesbitt/Carbon)
+* [Flysystem](https://github.com/thephpleague/flysystem)
 
 Project is [optionally] integrated with:
 * [Fabric](http://www.fabfile.org/)
