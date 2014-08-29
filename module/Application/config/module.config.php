@@ -73,7 +73,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Faker' => 'Application\Controller\FakerController'
         ),
     ),
     'view_manager' => array(
@@ -98,7 +99,7 @@ return array(
             'routes' => array(
                 'faker' => array(
                     'options' => array(
-                        'route'    => '/faker',
+                        'route'    => 'faker',
                         'defaults' => array(
                             'controller' => 'Application\Controller\Faker',
                             'action'     => 'index',
