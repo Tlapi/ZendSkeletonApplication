@@ -67,6 +67,11 @@ php vendor/bin/doctrine orm:schema-tool:update --force
 ``` 
 to create your database.
 
+Run faker to fake your entities data if you want
+```
+php public/index.php faker
+```
+
 ### [optional] Set up Fabric
 
 Set your deployment options in `build.xml` and deploy with cli: 
