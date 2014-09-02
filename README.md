@@ -18,7 +18,7 @@ This skeleton comes with:
 * [Flysystem](https://github.com/thephpleague/flysystem)
 
 Project is [optionally] integrated with:
-* [Fabric](http://www.fabfile.org/)
+* [Phing](http://www.phing.info/)
 * [Bower](http://bower.io/) ([nmp](https://www.npmjs.org/) required)
 * [Gulp](http://gulpjs.com/) ([nmp](https://www.npmjs.org/) required)
 
@@ -72,15 +72,15 @@ Run faker to fake your entities data if you want
 php public/index.php faker
 ```
 
-### [optional] Set up Fabric
+### [optional] Set up Phing
 
 Set your deployment options in `build.xml` and deploy with cli: 
 ```
-fab
+php phing-latest.phar
 ``` 
 or apply your hotfix with: 
 ```
-fab applyhotfix
+php phing-latest.phar applyhotfix
 ```
 
 ### [optional] Set up Bower
